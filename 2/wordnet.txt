@@ -1,0 +1,71 @@
+--------------------------------
+2.1 Synsets and their definitions
+Synset: Synset('dog.n.01')
+Definition: a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds
+
+
+Synset: Synset('frump.n.01')
+Definition: a dull unattractive unpleasant girl or woman
+
+
+Synset: Synset('dog.n.03')
+Definition: informal term for a man
+
+
+Synset: Synset('cad.n.01')
+Definition: someone who is morally reprehensible
+
+
+Synset: Synset('frank.n.02')
+Definition: a smooth-textured sausage of minced beef or pork usually smoked; often served on a bread roll
+
+
+Synset: Synset('pawl.n.01')
+Definition: a hinged catch that fits into a notch of a ratchet to move a wheel forward or prevent it from moving backward
+
+
+Synset: Synset('andiron.n.01')
+Definition: metal supports for logs in a fireplace
+
+
+Synset: Synset('chase.v.01')
+Definition: go after with the intent to catch
+
+
+--------------------------------
+2.2 Hypernyms
+Synset: Synset('dog.n.01')
+Hypernyms: [Synset('canine.n.02'), Synset('domestic_animal.n.01')]
+
+
+--------------------------------
+2.3 Hypernym paths of Synset('dog.n.01') 
+
+Path[0]:
+entity.n.01
+physical_entity.n.01
+object.n.01
+whole.n.02
+living_thing.n.01
+organism.n.01
+animal.n.01
+chordate.n.01
+vertebrate.n.01
+mammal.n.01
+placental.n.01
+carnivore.n.01
+canine.n.02
+dog.n.01
+
+Path[1]:
+entity.n.01
+physical_entity.n.01
+object.n.01
+whole.n.02
+living_thing.n.01
+organism.n.01
+animal.n.01
+domestic_animal.n.01
+dog.n.01
+
+--------------------------------

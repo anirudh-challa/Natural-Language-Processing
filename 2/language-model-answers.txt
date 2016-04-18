@@ -1,0 +1,102 @@
+Doing: Lowering case of text
+Doing: Removing stop words from text
+Writing negative-unigram-freq.txt
+Writing positive-unigram-freq.txt
+Writing negative-bigram-freq.txt
+Writing positive-bigram-freq.txt
+
+The most frequent unigrams for negative reviews:-
+food 149
+restaurant 96
+us 95
+service 89
+n't 88
+'s 82
+one 72
+place 68
+table 60
+would 57
+
+The most frequent unigrams for positive reviews:-
+food 124
+'s 88
+great 83
+place 61
+restaurant 55
+service 54
+good 53
+best 43
+excellent 38
+n't 37
+
+The most frequent bigrams for negative reviews:
+dining experience 12
+go back 10
+prime rib 8
+coral grill 8
+number one 8
+food cold 7
+20 minutes 6
+n't know 6
+n't get 6
+service food 6
+
+The most frequent bigrams for positive reviews:
+great food 13
+food excellent 12
+great place 9
+food service 8
+food great 8
+highly recommend 8
+food good 6
+recommend place 6
+food wonderful 6
+wine list 6
+
+We find Positive Collocations
+
+chez capo; highly recommend; pancake house; san francisco; mashed
+potatoes; wine list; millbrae pancake; rosa negra; several times;
+worth trip; big city; food excellent; sure try; head chef; something
+everyone; ala carte; eastern market; outdoor patio; ravioli browned;
+great food
+
+We find Negative Collocations
+
+prime rib; coral grill; dining experience; fried rice; number one;
+crab legs; 227 bistro; taco bell; tourist trap; local boys; needless
+say; looked like; speak manager; health department; sunset restaurant;
+wait staff; medium rare; pattio area; food cold; come back
+
+Doing: Probability of the first sentence without the stop words
+
+The first line is "excellent restaurant"
+P(first line) = P(excellent)P(restaurant|excellent)
+P(excellent) = 0.005797985962770827
+P(restaurant|excellent) = 0.05263157894736842
+P(first line) = 0.0003051571559353067
+
+Doing: Probability of the first sentence with the stop words
+
+The first line is "an excellent restaurant ."
+P(first line) = P(an)P(excellent)P(restaurant|an excellent)P(.|excellent restaurant)
+
+This uses trigram model(Second order)  of Markov Assumption
+
+Doing: P(mashed U potatoes)
+
+P(mashed U potatoes) = P(mashed) + P(potatoes) - P(mashed^potatoes)
+P(mashed) =  0.0010680500457735734
+P(potatoes) =  0.0015257857796765334
+
+Assuming Probability of a word being 'mashed' or 'potatoes' is independent of each other
+P(mashed^potatoes) = P(mashed)*P(potatoes) =  1.6296155718241888e-06
+
+Assuming Probability of a word being 'mashed' or 'potatoes' is not independent of each other
+P(mashed^potatoes) = P(potatoes|mashed)*P(mashed) =  0.0007628928898382667
+
+P(mashed U potatoes) = 0.002592 or 0.001831
+
+If we find a word that is not in our frequency tables, then the probobality of the sentence becomes 
+0.To overcome this we use Additive smoothing in which we add 1 to the count of every word in the 
+vocabulary, so that no word has 0 probability.

@@ -1,17 +1,12 @@
-import nltk, zipfile, argparse
+import nltk, zipfile, argparse,pickle,sys
+import pandas as pd
 
 def tokenize(documents):
-    for doc in documents:
-        sentences = nltk.sent_tokenize(document)    
+    sentences = [nltk.sent_tokenize(document) for document in documents]
 
-    
-    for document in sentence:
-        for sen in document:
-            words = nltk.word_tokenize(sen.lower())    
+    words = [nltk.word_tokenize(sentence.lower()) for doc in sentences for sentence in doc]
 
-    for doc in sentences:
-        for sentence in doc:
-            initial_words = nltk.word_tokenize(sentence) 
+    original_words = [nltk.word_tokenize(sentence) for doc in sentences for sentence in doc]
 
     corpus_size = 0
     vocab_size = 0
@@ -22,7 +17,7 @@ def tokenize(documents):
     
     corpus_size = len(wrdlist)
     vocab_size = len(set(wrdlist))
-    return corpus_size,vocab_size,words,sentences,initial_words
+    return corpus_size,vocab_size,words,sentences,original_words
 
 def pos_tagging(documents,f):
     corpus_tags=[]
